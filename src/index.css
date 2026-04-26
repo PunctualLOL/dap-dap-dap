@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* District 45 — warm, refined modern European palette */
+    --background: 35 25% 96%;
+    --foreground: 25 30% 12%;
+
+    --card: 35 30% 98%;
+    --card-foreground: 25 30% 12%;
+
+    --popover: 35 30% 98%;
+    --popover-foreground: 25 30% 12%;
+
+    /* Deep claret / burgundy as primary brand */
+    --primary: 355 55% 28%;
+    --primary-foreground: 35 30% 96%;
+    --primary-glow: 355 60% 42%;
+
+    /* Warm cream / linen secondary */
+    --secondary: 38 35% 90%;
+    --secondary-foreground: 25 30% 15%;
+
+    --muted: 35 20% 92%;
+    --muted-foreground: 25 12% 38%;
+
+    /* Brushed gold accent */
+    --accent: 38 55% 52%;
+    --accent-foreground: 25 35% 12%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 30 20% 85%;
+    --input: 30 20% 85%;
+    --ring: 355 55% 28%;
+
+    --radius: 0.25rem;
+
+    /* Surfaces */
+    --ink: 25 35% 10%;
+    --ink-foreground: 35 30% 96%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(180deg, hsl(25 35% 8% / 0.2) 0%, hsl(25 35% 8% / 0.85) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(38 60% 58%), hsl(38 50% 42%));
+    --gradient-warm: linear-gradient(180deg, hsl(35 25% 96%) 0%, hsl(38 35% 90%) 100%);
+
+    /* Shadows */
+    --shadow-elegant: 0 20px 60px -20px hsl(355 55% 28% / 0.25);
+    --shadow-soft: 0 8px 30px -10px hsl(25 35% 10% / 0.15);
+    --shadow-gold: 0 10px 40px -10px hsl(38 55% 52% / 0.4);
+
+    /* Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 25 35% 8%;
+    --foreground: 35 25% 94%;
+    --card: 25 30% 10%;
+    --card-foreground: 35 25% 94%;
+    --popover: 25 30% 10%;
+    --popover-foreground: 35 25% 94%;
+    --primary: 355 60% 50%;
+    --primary-foreground: 35 30% 96%;
+    --secondary: 25 20% 16%;
+    --secondary-foreground: 35 25% 94%;
+    --muted: 25 20% 16%;
+    --muted-foreground: 35 15% 65%;
+    --accent: 38 55% 52%;
+    --accent-foreground: 25 35% 12%;
+    --destructive: 0 62.8% 45%;
+    --destructive-foreground: 35 25% 94%;
+    --border: 25 20% 18%;
+    --input: 25 20% 18%;
+    --ring: 38 55% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .bg-ink { background-color: hsl(var(--ink)); }
+  .text-ink { color: hsl(var(--ink)); }
+  .text-ink-foreground { color: hsl(var(--ink-foreground)); }
+}
