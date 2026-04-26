@@ -112,7 +112,7 @@ export const Booking = () => {
   }, [form.date]);
 
   // Re-check capacity when party size changes (so dropdown updates)
-  const partySize = form.guests === "9+" ? 9 : parseInt(form.guests || "0", 10);
+ const partySize = parseInt(form.guests || "0", 10);
 
   const getSlotStatus = (slot: string) => {
     const booked = capacityMap[slot] || 0;
@@ -208,7 +208,7 @@ export const Booking = () => {
                     <Select value={form.guests} onValueChange={(v) => update("guests", v)} required>
                       <SelectTrigger id="guests"><SelectValue placeholder="How many guests?" /></SelectTrigger>
                       <SelectContent>
-                        {[1,2,3,4,5,6,7,8,"9+"].map((n) => (
+                        {{Array.from({length: 40}, (_, i) => i + 1).map((n) => (
                           <SelectItem key={n} value={String(n)}>{n} {Number(n) === 1 ? "guest" : "guests"}</SelectItem>
                         ))}
                       </SelectContent>
