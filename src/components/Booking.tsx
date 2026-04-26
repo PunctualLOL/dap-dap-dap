@@ -208,7 +208,7 @@ export const Booking = () => {
                     <Select value={form.guests} onValueChange={(v) => update("guests", v)} required>
                       <SelectTrigger id="guests"><SelectValue placeholder="How many guests?" /></SelectTrigger>
                       <SelectContent>
-                        {{Array.from({length: 40}, (_, i) => i + 1).map((n) => (
+                        {Array.from({length: 40}, (_, i) => i + 1).map((n) => (
                           <SelectItem key={n} value={String(n)}>{n} {Number(n) === 1 ? "guest" : "guests"}</SelectItem>
                         ))}
                       </SelectContent>
